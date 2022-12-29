@@ -28,38 +28,46 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    HappyBirthdayPicture("sam","iman")
+                    HappyBirthdayPicture("sam", "iman")
                 }
             }
         }
     }
 }
+
 @Composable
-fun HappyBirthdayPicture(name: String, from: String){
+fun HappyBirthdayPicture(name: String, from: String) {
     Box {
-        Image(painter = painterResource(id = R.drawable.androidparty),
+        Image(
+            painter = painterResource(id = R.drawable.androidparty),
             contentDescription = null,
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(),
-        contentScale = ContentScale.Crop)
-        HappyBirthDayCard(name = name, from = from )
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            contentScale = ContentScale.Crop
+        )
+        HappyBirthDayCard(name = name, from = from)
     }
 }
+
 @Composable
 fun HappyBirthDayCard(name: String, from: String) {
     Column {
-        Text("Happy birthday $name!",
+        Text(
+            "Happy birthday $name!",
             fontSize = 36.sp,
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(align = Alignment.CenterHorizontally)
                 .padding(8.dp)
         )
-        Text("From $from!",
-            fontSize = 24.sp
-            , modifier = Modifier
-                .fillMaxWidth())
+        Text(
+            "From $from!",
+            fontSize = 24.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(align = Alignment.CenterHorizontally)
+        )
     }
 }
 
@@ -67,7 +75,7 @@ fun HappyBirthDayCard(name: String, from: String) {
 @Composable
 fun DefaultPreview() {
     BirthdayCardTheme {
-        HappyBirthdayPicture( "sam","iman")
+        HappyBirthdayPicture("sam", "iman")
 
     }
 }
